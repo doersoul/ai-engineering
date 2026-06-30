@@ -186,10 +186,9 @@
 
         .tag {
             display: inline-block;
-            padding: 6px 16px;
+            padding: 2px 8px;
             background: var(--gray-100);
-            border: 1px solid var(--gray-200);
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 13px;
             color: var(--gray-700);
             font-weight: 500;
@@ -206,7 +205,7 @@
         .install-tab {
             padding: 12px 24px;
             background: var(--gray-100);
-            border: 1px solid var(--gray-200);
+            border: 0 solid var(--gray-200);
             border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
@@ -280,7 +279,7 @@
             background: #166534;
         }
 
-        /* ===== Project Structure ===== */
+        /* ===== Engineering Structure ===== */
         .tree-block {
             background: var(--gray-50);
             border: 1px solid var(--gray-200);
@@ -559,7 +558,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background:#ffffff">
 
 <!-- Nav -->
 <nav class="nav" id="nav">
@@ -567,7 +566,7 @@
     <ul class="nav-links" id="navLinks">
         <li><a href="#overview" class="active" data-i18n="nav.overview">概览</a></li>
         <li><a href="#install" data-i18n="nav.install">安装</a></li>
-        <li><a href="#structure" data-i18n="nav.structure">项目结构</a></li>
+        <li><a href="#structure" data-i18n="nav.structure">工程结构</a></li>
         <li><a href="#workflow" data-i18n="nav.workflow">流程</a></li>
         <li><a href="#commands" data-i18n="nav.commands">命令</a></li>
     </ul>
@@ -631,10 +630,10 @@
     </div>
 </section>
 
-<!-- Project Structure -->
+<!-- Engineering Structure -->
 <section id="structure">
     <div class="container">
-        <h2 class="section-title" data-i18n="structure.title">项目结构</h2>
+        <h2 class="section-title" data-i18n="structure.title">工程结构</h2>
         <p class="section-desc" data-i18n-html="structure.desc">执行 <code
                 style="background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:13px;font-family:monospace;">/ai-env-init</code>
             后，在你的项目中生成以下目录结构</p>
@@ -644,7 +643,7 @@
         class="tree-comment" data-i18n="structure.c1"># 主项目根目录</span>
 ├── AGENTS.md                         <span class="tree-comment" data-i18n="structure.c2"># 主项目指导文件</span>
 ├── <span class="tree-dir">ai/</span>                               <span
-            class="tree-comment" data-i18n="structure.c3"># AI 工作目录，过程产物输出</span>
+            class="tree-comment" data-i18n="structure.c3"># AI 工作目录（过程产物）</span>
 │   ├── <span class="tree-dir">archetypes/</span>                   <span class="tree-comment" data-i18n="structure.c4"># PRD、启始 Prompt、原型等入口 (用户唯一干预路径)</span>
 │   │   └── {user}/{seq}/{prd}.md
 │   ├── <span class="tree-dir">changes/</span>                      <span class="tree-comment" data-i18n="structure.c5"># 变更目录 (explore/propose 产出)</span>
@@ -707,6 +706,10 @@
             <div class="cli-line cli-user"><span class="cli-label">USER&gt;</span><span class="cli-text">/ai-spec-explore @ai/archetypes/tom/0/prd.md</span>
             </div>
             <div class="cli-line cli-ai"><span class="cli-label">AI&gt;</span><span class="cli-text" data-i18n="workflow.cli">已进入探索模式，正在分析 PRD 并梳理需求...</span>
+            </div>
+            <div class="cli-line cli-user"><span class="cli-label">USER&gt;</span><span class="cli-text" data-i18n="workflow.cli2">创建变更 或 /ai-spec-propose</span>
+            </div>
+            <div class="cli-line cli-ai"><span class="cli-label">AI&gt;</span><span class="cli-text" data-i18n="workflow.cli3">创建变更中..</span>
             </div>
             <div class="cli-line cli-user"><span class="cli-label">USER&gt;</span><span
                     class="cli-text">/ai-spec-apply</span></div>
@@ -819,7 +822,7 @@
         en: {
             'nav.overview': 'Overview',
             'nav.install': 'Install',
-            'nav.structure': 'Structure',
+            'nav.structure': 'Engineering',
             'nav.workflow': 'Workflow',
             'nav.commands': 'Commands',
             'aria.menu': 'Menu',
@@ -832,11 +835,11 @@
             'install.hint': 'After installation, please <strong style="color:var(--black);">restart the Agent</strong> and run <code>/ai-env-init</code> to complete environment initialization',
             'common.copy': 'Copy',
             'common.copied': 'Copied',
-            'structure.title': 'Project Structure',
+            'structure.title': 'Engineering Structure',
             'structure.desc': 'After running <code style="background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:13px;font-family:monospace;">/ai-env-init</code>, the following directory structure is generated in your project',
             'structure.c1': '# Main project root directory',
             'structure.c2': '# Main project guidance file',
-            'structure.c3': '# AI working directory, process artifacts output',
+            'structure.c3': '# AI working directory (process artifacts output)',
             'structure.c4': '# Entry for PRD, initial prompts, prototypes (user\'s only intervention path)',
             'structure.c5': '# Changes directory (explore/propose output)',
             'structure.c6': '# Archive directory (archive output)',
@@ -853,6 +856,8 @@
             'workflow.step3': 'Implement tasks with TDD, review, verify',
             'workflow.step4': 'Archive completed changes, sync specs',
             'workflow.cli': 'Entered exploration mode, analyzing PRD and clarifying requirements...',
+            'workflow.cli2': 'create change or /ai-spec-propose',
+            'workflow.cli3': 'Creating change...',
             'commands.title': 'Commands',
             'commands.desc': 'Four categories of commands covering environment, modules, Spec workflow, and Git operations',
             'commands.cat.env': 'Environment',
@@ -877,7 +882,7 @@
         zh: {
             'nav.overview': '概览',
             'nav.install': '安装',
-            'nav.structure': '项目结构',
+            'nav.structure': '工程结构',
             'nav.workflow': '流程',
             'nav.commands': '命令',
             'aria.menu': '菜单',
@@ -890,11 +895,11 @@
             'install.hint': '安装完成后，请<strong style="color:var(--black);">重启 Agent</strong>，并执行 <code>/ai-env-init</code>命令完成环境初始化',
             'common.copy': '复制',
             'common.copied': '已复制',
-            'structure.title': '项目结构',
+            'structure.title': '工程结构',
             'structure.desc': '执行 <code style="background:var(--gray-100);padding:2px 6px;border-radius:4px;font-size:13px;font-family:monospace;">/ai-env-init</code> 后，在你的项目中生成以下目录结构',
             'structure.c1': '# 主项目根目录',
             'structure.c2': '# 主项目指导文件',
-            'structure.c3': '# AI 工作目录，过程产物输出',
+            'structure.c3': '# AI 工作目录（过程产物）',
             'structure.c4': '# PRD、启始 Prompt、原型等入口 (用户唯一干预路径)',
             'structure.c5': '# 变更目录 (explore/propose 产出)',
             'structure.c6': '# 归档目录 (archive 产出)',
@@ -911,6 +916,8 @@
             'workflow.step3': '按 TDD 实现任务、审查、验证',
             'workflow.step4': '归档已完成变更，同步规格',
             'workflow.cli': '已进入探索模式，正在分析 PRD 并梳理需求...',
+            'workflow.cli2': '创建变更 或 /ai-spec-propose',
+            'workflow.cli3': '创建变更中..',
             'commands.title': '命令',
             'commands.desc': '四大类命令，覆盖环境、模块、Spec 工作流与 Git 操作',
             'commands.cat.env': '环境指令',

@@ -31,14 +31,14 @@ Fetch and follow instructions from https://raw.githubusercontent.com/doersoul/ai
 
 After installation, please **restart the Agent** and run `/ai-env-init` to complete environment initialization.
 
-## Project Structure
+## Engineering Structure
 
 After running `/ai-env-init`, the following directory structure is generated in your project:
 
 ```text
 {project}/                            # Main project root directory
 ├── AGENTS.md                         # Main project guidance file
-├── ai/                               # AI working directory, process artifacts output
+├── ai/                               # AI working directory (process artifacts output)
 │   ├── archetypes/                   # Entry for PRD, initial prompts, prototypes (user's only intervention path)
 │   │   └── {user}/{seq}/{prd}.md
 │   ├── changes/                      # Changes directory (explore/propose output)
@@ -70,6 +70,8 @@ Enhanced OpenSpec workflow with integrated Superpowers plugin, achieving a compl
 ```bash
 USER> /ai-spec-explore @ai/archetypes/tom/0/prd.md
 AI>   Entered exploration mode, analyzing PRD and clarifying requirements...
+USER> create change or /ai-spec-propose
+AI>   Creating change...
 USER> /ai-spec-apply
 ```
 

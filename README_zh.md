@@ -31,14 +31,14 @@ Fetch and follow instructions from https://raw.githubusercontent.com/doersoul/ai
 
 安装完成后，请**重启 Agent**，并执行 `/ai-env-init` 命令完成环境初始化。
 
-## 项目结构
+## 工程结构
 
 执行 `/ai-env-init` 后，在你的项目中生成以下目录结构：
 
 ```text
 {project}/                            # 主项目根目录
 ├── AGENTS.md                         # 主项目指导文件
-├── ai/                               # AI 工作目录，过程产物输出
+├── ai/                               # AI 工作目录（过程产物）
 │   ├── archetypes/                   # PRD、启始 Prompt、原型等入口 (用户唯一干预路径)
 │   │   └── {user}/{seq}/{prd}.md
 │   ├── changes/                      # 变更目录 (explore/propose 产出)
@@ -70,6 +70,8 @@ Fetch and follow instructions from https://raw.githubusercontent.com/doersoul/ai
 ```bash
 USER> /ai-spec-explore @ai/archetypes/tom/0/prd.md
 AI>   已进入探索模式，正在分析 PRD 并梳理需求...
+USER> 创建变更 或 /ai-spec-propose
+AI>   创建变更中..
 USER> /ai-spec-apply
 ```
 
