@@ -29,7 +29,7 @@ const parseFrontmatter = (md) => {
     return {frontmatter, body};
 }
 
-export const AiCommandsPlugin = async () => ({
+export const AiEngineeringPlugin = async () => ({
     config: async (config) => {
         config.skills = config.skills || {};
         config.skills.paths = config.skills.paths || [];
